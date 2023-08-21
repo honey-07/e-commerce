@@ -78,9 +78,6 @@ for (int i = 0; i < r2; i++)
 		cin >> m2[i][j];
 	}
 }
-
-
-
 arr.mul(m1,m2,r1,c1,r2,c2);
 
 return 0;
