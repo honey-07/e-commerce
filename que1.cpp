@@ -1,84 +1,46 @@
-//Write a C++ Program to print Multiplication of two matrices.
-
+// Write a C++ Proram to return sorted Array in ascending order and print the sorted array in a function.
 #include<iostream>
 using namespace std;
-class matrix
+class array
 {
 public:
-	void mul(int m1[][30],int m2[][30],int r1,int c1,int r2,int c2)
+	void sorting(int a[],int s)
 	{
-		
-		cout << "matrix 1 : "<< endl;
-			for (int i = 0; i < r1; i++)
-			{
-				for (int j = 0; j < c1; j++)
-				{
-						cout <<" "<< m1[i][j];
-				}	
-				cout << endl;
-			}
+		for (int i = 0; i < s; i++)
+		 {
+       		 for (int j = 0; j < s - i - 1; j++)
+       		  {
+           		 if (a[j] > a[j + 1]) 
+           		 	{
+              
+               			 int temp = a[j];
+             		  	 a[j] = a[j + 1];
+              		 	 a[j + 1] = temp;
+              		}
+            }
+        }
 
-		cout << "matrix 2 : " << endl ;
-			for (int i = 0; i < r2; i++)
-			{
-				for (int j = 0; j < c2; j++)
-				{
-						cout <<" "<< m2[i][j];
-				}	
-				cout << endl;
-			}
-
-			cout << "MATRIX 3" <<endl;
-			for (int i = 0; i < r1; i++)
-			{
-				int m3[30][30];
-				for (int j = 0; j < c2; j++)
-				{
-					for (int k = 0; k < c1 ; k++)
-					{
-						m3[i][j] += m1[i][k]*m2[k][j];
-					}
-					cout <<" "<< m3[i][j];
-				}
-				
-				cout << endl;
-			}
-
+        cout << "SORTED ARRAY IN ASCENDING ORDER :  ";
+        for (int i = 0; i < s; i++) 
+        {
+        	cout << " " << a[i];
+        }
 	}
 };
-
 int main()
 {
-	matrix arr;
-	int m1[30][30],m2[30][30],r1,r2,c1,c2;
+	array arr;
+	int a[30],s;
 
-	cout << "Enter row1 and column1 size : ";
-	cin >> r1 >> c1;
+	cout << "Enter size : ";
+	cin >> s;
 
-	cout << "Enter row2 and column2 size : ";
-	cin >> r2 >> c2;
-
-
-	
-
-cout << "Enter value of matrix 1 : ";
-for (int i = 0; i < r1; i++)
-{
-	for (int j = 0; j < c1; j++)
+	cout << "Enter elements : ";
+	for (int i = 0; i < s; i++)
 	{
-		cin >> m1[i][j];
-	}	
-}
-
-cout << "Enter value of matrix 2 : ";
-for (int i = 0; i < r2; i++)
-{
-	for (int j = 0; j < c2; j++)
-	{
-		cin >> m2[i][j];
+		cin >> a[i];
 	}
-}
-arr.mul(m1,m2,r1,c1,r2,c2);
 
+arr.sorting(a,s);
 return 0;
 }
