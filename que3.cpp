@@ -1,43 +1,27 @@
-//Write a C++ program to find the sum of individual digits of a positive integer arrays.
+/* Write a C++ Program to display largest among two numbers using function template.
+ Pass Integer, Float as parameter to the function template.*/
 
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-class sorting
+template<class t1, class t2>
+void display(t1 n1,t2 n2)
 {
-public:
+	if(n1 > n2)
+		cout << "LARGEST NUMBER IS : " << n1;
+	else
+		cout << "LARGEST NUMBER IS : "<< n2;
+}
 
-	void sort(int a[],int s)
-	{
-		
-		for (int i = 0; i < s; i++)
-		{
-			int rem,sum=0;
-			while(a[i] > 0)
-			{
-				
-				rem=a[i]%10;
-				sum += rem;
-				a[i]/=10;
-			}
-			cout << " " << sum;
-			
-		}
-	}
-
-};
 int main()
 {
-	sorting arr;
-	int a[100],s;
-	cout << "Enter size : ";
-	cin >> s;
-	cout << "Enter values : "<< endl;
-	for (int i = 0; i < s; i++)
-	{
-		cin >> a[i];	
-	}
+	int n1;
+	float n2;
+	cout << "Enter integer number : ";
+	cin >> n1;
+	cout << "Enter float number : ";
+	cin >> n2;
 
-arr.sort(a,s);
-return 0;
+	display(n1,n2);
+return 0;	
 }
