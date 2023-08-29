@@ -1,46 +1,98 @@
-//Write a C++ program to sort a list of numbers in ascending order.
+/* Write a C++ Program to perform following-
+• compare two strings
+• concate two strings
+• copy the string
+• find length of string
+• Count the number of words and characters in a
+sentence.
+*/
 #include <iostream>
+#include <string>
 using namespace std;
 
-class sorting
-{
-public:
-
-	void sort(int a[],int s)
-	{
-		
-		for (int i = 0; i < s; i++)
-		{
-			for (int j = 0; j < s - i - 1; j++) 
-            {
-                if (a[j] > a[j + 1])
-                {
-                   
-                    int temp = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = temp;
-                }
-            }
-		}
-		for (int i = 0; i < s; ++i)
-		{
-			cout << " " << a[i];
-		}	
-	}
-
-};
 int main()
 {
-	sorting arr;
-	int a[100],s;
-	cout << "Enter size : ";
-	cin >> s;
-	cout << "Enter values : "<< endl;
-	for (int i = 0; i < s; i++)
-	{
-		cin >> a[i];	
-	}
+	int choice;
 
-arr.sort(a,s);
-return 0;
+	cout << "Enter your choice : ";
+	cin >> choice;
+
+	cin.ignore();
+	switch(choice)
+	{
+		case 1:
+			{
+				string str,str2;
+				cout << "Enter string 1 : ";
+				cin >> str;
+				cout << "Enter string 2 : ";
+				cin >> str2;
+
+				if(str==str2)
+					cout<< "BOTH THE STRINGS ARE EQUAL" << endl;
+				else
+					cout<< "BOTH THE STRINGS ARE NOT EQUAL" << endl;
+			}
+			break;
+		case 2:
+			{
+				string str,str2;
+				cout << "Enter string 1 : ";
+				cin >> str;
+				cout << "Enter string 2 : ";
+				cin >> str2;
+
+				str.append(str2);
+				cout << "STRING IS : " << str;
+			}
+			break;	
+		case 3:
+			{
+				string str;
+				cout << "Enter string : ";
+				getline(cin, str);
+				char str2[15];
+				str.copy(str2,5,3);
+				cout << "STRING IS : "<< str2;
+				
+			}	
+			break;
+		case 4:
+			{
+				string str;
+				cout << "Enter string : ";
+				getline(cin, str);
+				cout << "LENGTH OF STRING IS : "<< str.length();
+			}	
+			break;
+		case 5:
+			{
+				string sentence;
+				int word=0,character=0;
+
+				cout << "Enter string : ";
+				getline(cin, sentence);
+				
+				for(char c : sentence)
+				{
+					if(c==' ')
+					{
+						word++;
+					}
+					else
+					{
+						character++;
+					}
+				}
+				word++;
+				cout << "TOTAL WORDS : " << word << endl;
+				cout << "TOTAL CHARACTERS : " << character << endl;
+			}
+			break;
+
+		default:
+			cout << "INVALID CHOICE.";
+			break;
+	}
+	return 0;
 }
