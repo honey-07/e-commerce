@@ -1,47 +1,34 @@
-//Write a C++ Proram to sort an Array in ascending order.
+// Write a program to create a function template for finding minimum value contained in an array.
 
-#include <iostream>
+#include<iostream>
 using namespace std;
+template<class t>
 
-class sorting
+t min(t a[],t s)
 {
-public:
-
-	void sort(int a[],int s)
-	{
-		
-		for (int i = 0; i < s; i++)
-		{
-			for (int j = 0; j < s - i - 1; j++) 
-            {
-                if (a[j] > a[j + 1])
-                {
-                   
-                    int temp = a[j];
-                    a[j] = a[j + 1];
-                    a[j + 1] = temp;
-                }
-            }
+  t min=a[0];
+		for (int i = 1; i < s; i++)
+		{		
+			if(min > a[i]){
+			min=a[i];
+			}	
 		}
-		for (int i = 0; i < s; ++i)
-		{
-			cout << " " << a[i];
-		}	
-	}
+		cout << "MINIMUM NUMBER FROM ARRAY IS : " << min;
+}
 
-};
 int main()
+
 {
-	sorting arr;
-	int a[100],s;
-	cout << "Enter size : ";
+	int a[30],s;
+	cout << "Enter size: ";
 	cin >> s;
-	cout << "Enter values : "<< endl;
+
+	cout << "Enter array elements : ";
+
 	for (int i = 0; i < s; i++)
 	{
-		cin >> a[i];	
+		cin >> a[i];
 	}
-
-arr.sort(a,s);
-return 0;
+	min(a,s);
+return 0;	
 }
