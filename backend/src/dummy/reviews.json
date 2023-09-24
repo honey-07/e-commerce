@@ -1,0 +1,52 @@
+[
+	{
+		"rating": 5,
+		"title": "A Must Buy !!!",
+		"description": "This is a must buy product. I have been using it for a month now. I would recommend this product to everyone."
+	},
+	{
+		"rating": 5,
+		"title": "A Very Good Product",
+		"description": "This is a very good product."
+	},
+	{
+		"rating": 4,
+		"title": "Value for Money",
+		"description": "This is a value for money product."
+	},
+	{
+		"rating": 3,
+		"title": "Average Product",
+		"description": "This is an average product but it is good for the price."
+	},
+	{
+		"rating": 3,
+		"title": "Not Bad",
+		"description": "This is not a bad product but it is not good either."
+	},
+	{
+		"rating": 2,
+		"title": "Not Good",
+		"description": "This is not a good product."
+	},
+	{
+		"rating": 2,
+		"title": "Not Worth It",
+		"description": "This is not worth it."
+	},
+	{
+		"rating": 1,
+		"title": "Worst Product",
+		"description": "This is the worst product I have ever bought."
+	},
+	{
+		"rating": 1,
+		"title": "Trash !!!",
+		"description": "This is a trash product. Don't buy it."
+	},
+	{
+		"rating": 1,
+		"title": "Scam !!!",
+		"description": "This is a scam product. Don't buy it."
+	}
+]
